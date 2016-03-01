@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"  content="width=device-width, initial-scale=1">
+
+	<title>WebApp</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="fonts/style.css">
+</head>
+<body>
+	<header>
+		<div class="layout-wrap">
+			<a href="#"><alt="netcraft" class="logo-netcraft"></a>
+			<form class="search-box">
+				<input type="search" name="q" placeholder="search">
+			</form>
+		</div>
+	</header>
+
+	<section class="page-body_layout-wrap">
+		<div class="notifications"></div>
+
+		<nav>
+			<div class="nav-section">
+				<div class="menu">
+					<div class="menu-caption">
+						<div class="tri"></div>
+					</div>
+
+					<ul class="action-list" id="action-list1">
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="nav-section">
+				<div class="menu">
+					<div class="menu-caption">
+						<div class="tri"></div>
+					</div>
+					<ul class="action-list" id="action-list2">
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+
+				</div>
+			</div>
+
+			<div class="nav-section">
+				<div class="menu">
+					<div class="menu-caption">
+						<div class="tri"></div>
+					</div>
+					<ul class="action-list" id="action-list3">
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<section class="tabs">
+			<ul>
+			   <li id="li-quick-reports" class="turnon"><a href="#quick-reports" class="icon-external-link tab-link">Quick Reports</a></li>
+			   <li id="li-my-folders"><a href="#my-folders" class="icon-external-link tab-link">My Folders</a></li>
+			   <li id="li-my-team-folders"><a href="#my-team-folders" class="icon-copy tab-link">My Team Folders</a></li>
+			   <li id="li-public-folders"><a href="#public-folders" class="icon-folder-open-o tab-link">Public Folders</a></li>
+			</ul>
+
+
+			<div id="quick-reports" class="tab_turnon">
+				<div class="sites-div-turnon">
+					<form class="form" method="GET" action="index.html#my-folders">
+						<ul class="form-ul">
+							<li> 
+								<label for="site1name"> Name </label>
+								<input type="text" name="site1name" placeholder="Name" id="site1name"/>
+								<label for="site1url"> URL </label>
+								<input type="text" name="site1url" placeholder="URL" id="site1url"/>
+							</li>
+							<li class="readInputObject"> 
+								<label for="site2name"> Name </label>
+								<input type="text" name="site2name" placeholder="Name" id="site2name"/>
+								<label for="site2url"> URL </label>
+								<input type="text" name="site2url" placeholder="URL" id="site2url"/>
+							</li>
+							<li class="readInputObject"> 
+								<label for="site3name"> Name </label>
+								<input type="text" name="site3name" placeholder="Name" id="site3name"/>
+								<label for="site3url"> URL </label>
+								<input type="text" name="site3url" placeholder="URL" id="site3url"/>
+							</li>
+						</ul>
+						<button id="save-form" value="Save" class="save">Save</button>
+						<button id="cancel-form" value="Cancel" class="cancel">Cancel</button>
+					</form>
+				</div>
+				<div class="toolbar-icons">
+					<select>
+					</select>
+					<a href="#" id="settings"><img src="Images/icons/settings.png" alt="settings" class="settings"></a>
+					<a href="#" id="expand"><img src="Images/icons/expand.png" alt="expand" class="expand"></a>
+				</div>
+				<div class="iframe-div">
+				</div>
+			</div>
+		</section>
+	</section>
+<script src="js/main.js"></script>
+</body>
+</html>
