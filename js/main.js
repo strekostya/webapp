@@ -345,13 +345,6 @@ var activeTab = function(currentTag)
     return className;
 };
 
-
-var activeTab = function(escapeTag)
-{
-    alert(className);
-    return this.parentNode.className;
-};
-
 window.onLoad = start();
 
 
