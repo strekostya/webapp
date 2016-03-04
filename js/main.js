@@ -342,8 +342,14 @@ var openIframe = function ()
 var activeTab = function(currentTag)
 {
     var className = currentTag.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.className;
-    alert(className);
     return className;
+};
+
+
+var activeTab = function(escapeTag)
+{
+    alert(className);
+    return this.parentNode.className;
 };
 
 window.onLoad = start();
