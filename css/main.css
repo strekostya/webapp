@@ -1,27 +1,16 @@
-.icon-star-o:before {
-	content: "\f006";
-	margin-right: 5px;
-}
-.icon-external-link:before {
-	content: "\f08e";
-	margin-right: 5px;
-}
-.icon-copy:before {
-	content: "\f0c5";
-	margin-right: 5px;
-}
-.icon-folder-open-o:before {
-	content: "\f115";
-	margin-right: 5px;
+.nav-section:first-child
+{
+    margin-left: 0;
 }
 
+.nav-section:last-child
+{
+    margin-right: 0;
+}
 
-body {
-	font-family: 'icons';
-	margin: 0;
-	background-image: url("../Images/body-background.jpg");
-	width: 100%;
-	background-repeat: none;
+.nav-section:hover,.nav-section:focus
+{
+    background-color: #444444;
 }
 header
 {
@@ -29,6 +18,93 @@ header
     width: 100%;
     background-color: black;
 }
+.form-buttons 
+{
+    float: right;
+}
+
+.styled-select-list li:first-child 
+{
+ display: block;   
+}
+
+.styled-select-list li 
+{
+ display: none;   
+}
+
+.styled-select-list li:first-child:after 
+{
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+
+}
+
+.styled-select-list:hover  li
+{
+    display: block;
+}
+
+#my-folders .frame-window, #public-folders .frame-window
+{
+    margin: 1em;
+}
+#my-team-folders
+{
+    width: 100%;
+    height: 600px;
+    background: rgb(235, 235, 235);
+    display: none;
+    position: relative;
+    padding: 1em;
+    box-sizing: border-box;
+}
+#qr
+{
+    width: 100%;
+    height: 600px;
+    background: rgb(235, 235, 235);
+    display: none;
+    position: relative;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.settings-icon-wrapper
+{
+    float: right;
+    background: white;
+    height: 3em;
+    width: 3em;
+}
+
+.styled-select-list li a:link ,.styled-select-list li a:visited 
+{
+    text-decoration: none;
+    color: #6E6E6E;
+}
+
+.styled-select-list 
+{
+    margin-left: 0;
+    margin-top: 0;
+    padding: 5px 0 5px 9px;
+    list-style-type: none;
+    text-align: left;
+    position: absolute;
+    width: 300px;
+    background: white none repeat scroll 0 0;
+    display: none;
+    cursor: default;
+}
+
+.styled-select-list li:first-child 
+{
+ display: block;   
+}
+
 
 .heading
 {
@@ -44,347 +120,472 @@ header
 .find
 {
     float: right;
-    width: 16em;
-    height: 2em;
+    width: 20em;
+    height: 1.8em;
 }
 
+.settings-icon-wrapper
+{
+    background: white;
+    height: 3em;
+    width: 3em;
+    float: right;
+}
+
+.styled-select-list li a:link ,.styled-select-list li a:visited 
+{
+    text-decoration: none;
+    color: #6E6E6E;
+}
+
+.styled-select-list 
+{
+    margin-left: 0;
+    margin-top: 0;
+    padding: 5px 0 5px 9px;
+    list-style-type: none;
+    text-align: left;
+    position: absolute;
+    width: 300px;
+    background: white none repeat scroll 0 0;
+    display: none;
+    cursor: default;
+}
+
+.styled-select-list li:first-child 
+{
+ display: block;   
+}
+
+.styled-select-list li 
+{
+ display: none;   
+}
+
+.styled-select-list li:first-child:after 
+{
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid black;
+    float: right;
+    margin-top: 5px;
+    margin-right: 10px;
+}
 .body-heading
 {
-    background: rgba(120, 120, 120, 0.7);
-    padding: 1em;
+
     width: 80%;
     display: inline-block;
     position: relative;
     left: 120px;
     right: 120px;
     padding-left: 20px;
+    background: rgba(125, 125, 125, 0.8);
+    padding: 1em;
 }
 
-	.layout-wrap , .page-body_layout-wrap{
-		width: 95%;
-		max-width: 1100px;
-		margin: 0 auto;
-	}
 
-	.logo-netcraft {
-		padding-top: 20px;
-		content: url('../Images/logo-netcraft.svg');
-	}
 
-	.search-box {
-		padding-top: 30px;
-		float: right;
-	}
-
-	.notifications{
-		background-color: rgb(204,204,204);
-	}
-
-	.page-body_layout-wrap {
-		background-color: rgb(108,114,114);
-		padding: 20px;
-	}
-
-	nav {
-		text-align: center;
-		display: inline-block;
-	}
-
-	.nav-section {
-
-*/	width: 350px;
-height: 150px;
-background-color: black;
-color: white;
-text-align: center;
-position: relative;
-float: left;
+body
+{
+    background-image: url(../img/body-background.jpg);
+    background-size: cover;
 }
 
-.nav-section:first-child {
-	background-image: url("../Images/icons/action-report-new.png");
-	margin-right: 25px;
-	background-position: center 75px;
-	background-repeat: no-repeat;	
-}
-
-.nav-section:nth-child(2) {
-	background-image: url("../Images/icons/action-report-top.png");
-	margin-right: 25px;
-	background-position: center 75px;
-	background-repeat: no-repeat;	
-}
-
-.nav-section:last-child {
-	background-image: url("../Images/icons/actions-help.png");
-	background-position: center 75px;
-	background-repeat: no-repeat;	
-}
-
-.nav-section>p {
-	padding: 10px;
-	font-size: 1.2em;
-	margin: 0;
-}
-
-.menu {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	background-color: white;
-	color: black;
-	height: 30px;
-	text-align: left;
-	transition: all 0.5s ease;
-	z-index: 9999;
+.menu-caption
+{
+    background: rgb(230, 230, 235);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 20px;
+    color: black;
+    text-align: left;
 
 }
 
-.menu-caption {
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	bottom: 10px;
-	padding: 0 5px;
+.nav-section:hover .menu-caption:after,.nav-section:focus .menu-caption:after
+{
+    transform: rotate(180deg);
 }
 
-.tri {
-	margin-top: 20px; 
-	margin-right: 15px;
-	float: right;
-	width: 0px; 
-	height:0px; 
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-	border-bottom: 10px solid black;
+.nav-section:hover .action-list,.nav-section:focus .action-list
+{
+    display: block;
+}
+
+
+
+
+.notifications  p 
+{
+    background: rgb(230, 230, 235);
+
+    font-size: 14px;
+    margin: 1em;
+    padding: 0.6em 1.8em 0.6em 1.8em;
+}
+
+.menu-caption > p ,.dynamic-drop-down>ul
+{
+    padding-left: 1em;
+    float: left;
+}
+
+.menu-caption:after
+{
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid black;
+    float: right;
+    margin: 1em;
+}
+
+
+
+
+
+
+
+.tabs >ul >li >a 
+{
+    text-decoration: none;
+    color:white;
+}
+
+.tabs >ul >li:focus
+{
+    background: rgb(235, 235, 235);
+    outline: none;
+}
+.action-list
+{
+    width: 100%;
+    text-align: left;
+    position: absolute;
+    top: 160px;
+    z-index: 1;
+    list-style-type: none;
+    display: none;
+    padding: 0;
 
 }
 
-.menu:hover .tri {
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-	border-top: 10px solid black;
-	border-bottom: 0px;
+.action-list >li
+{
+
+    padding: 0.7em;
+    background: white;
+    border-bottom: 1px solid rgb(235, 235, 235);
+    font-size: 13px;
 }
 
-.action-list {
-	margin-top: 30px; 
-	opacity: 0;
-	visibility: hidden; 
-	transition: all 0.5s ease;
-	line-height: 25px;
-	padding: 10px;
-	background-color: white;
-	list-style: none;
+.action-list >li > a
+{
+    text-decoration: none;
+    color: black;
 }
 
-.menu:hover .action-list{
-	opacity: 1;
-	visibility: visible;
-	line-height: 25px;
-	padding: 10px;
-	background-color: white;
-	list-style: none;
+.action-list >li:last-child
+{
+    border-bottom: none;
 }
 
-.menu:hover {
-	background-color: rgb(204,204,204);
+.tabs
+{
+    padding: 1.2em;
 }
 
-.menu .action-list a{
-	display: block;
-	width: 100%;
-	line-height: 25px;
-	text-decoration: none;
-	color: black;
+.active-tab 
+{
+    background: rgb(230, 230, 240) !important;
 }
 
-	.tabs {
-		width: 100%;
-		height: 100%;
-		overflow: auto;
-	}
+.active-tab >a
+{
+    color: black !important;
+}
 
-	.tabs ul {
-		width: 100%;
-		padding: 0px;
-		margin-top: 20px;
-	}
+.tabs li:first-child
+{
+    margin-left: 0;
+}
 
-	.tabs li {
-		list-style: none;
-	}
+.tabs li:last-child
+{
+    margin-right: 0;
+}
 
-	.tabs li a{
-		background-color: rgb(68,68,68);
-		float: left;
-		width: 23.7%;
-		height: 30px;
-		margin-right: 19px;
-		color: white;
-		text-align: center;
-		vertical-align: middle;
-		padding-top: 10px;
-		text-decoration: none;
-	}
+#my-folders,#public-folders
+{
+    width: 100%;
+    height: 600px;
+    background: rgb(235, 235, 235);
+    display: none;
+    position: relative;
+}
+.nav-section
+{
+    background: black;
+    height: 11em;
+    width: 32%;
+    margin: 1%;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    font-size: 1rem;
+    vertical-align: bottom;
+}
 
-	.tabs li:last-child a {
-		margin-right: 0px;
-	}
+.nav-section > p
+{
+    font-size: 1.3em;
+    margin-top: 0.5em;
+}
+.frame-window 
+{
+    width: 100%;
+    height: 84%;
+    border: medium none;
+    position: absolute;
+    margin: 0em;
+    box-sizing: border-box;
+    display: block;
+    padding-right: 2em;
+    top: 68px;
+    z-index: 0;
+}
 
-	.tabs .turnon {
-	}
+.expand-icon ,.settings-icon
+{
+    float: right;
+    text-align: center;
+    margin: 1em 1em 0 1em;
+    display: block;
+    width: 20px;
+    height: 20px;
+}
 
-	.tabs .turnon > a {
-		color: black;
-		background-color: rgb(204,204,204);
-	}
+.report-container 
+{
+    height: 40%;
+    width:90%;
+    margin-top: 10%;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.icons-bar
+{
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+    top: 4px;
+}
+
+body
+{
+    background-image: url(../img/body-background.jpg);
+    background-size: cover;
+}
+
+.menu-caption
+{
+    background: rgb(235, 235, 235);
+    font-size: 13px;
+    color: black;
+    text-align: left;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.menu-caption > p ,.dynamic-drop-down>ul
+{
+    padding-left: 1em;
+    float: left;
+}
+
+.menu-caption:after
+{
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid black;
+    float: right;
+    margin: 1em;
+    -moz-transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+}
+
+.notifications  p 
+{
+    background: rgb(235, 235, 235);
+    padding: 0.6em 1.8em 0.6em 1.8em;
+    font-size: 14px;
+    margin: 1em;
+}
+
+.nav-section:first-child
+{
+    margin-left: 0;
+}
+
+.nav-section:last-child
+{
+    margin-right: 0;
+}
+
+.nav-section:hover,.nav-section:focus
+{
+    background-color: #333333;
+}
+
+.nav-section:hover .menu-caption:after,.nav-section:focus .menu-caption:after
+{
+    transform: rotate(180deg);
+}
+
+.nav-section:hover .action-list,.nav-section:focus .action-list
+{
+    display: block;
+}
+
+.settings
+{
+    background: white;
+    padding: 1em;
+    box-shadow: 1px 1px 6px 2px gray;
+    height: 36%;
+    position: relative;
+    z-index: 2;
+}
+
+.settings  > form > ul
+{
+    padding-left: 0;
+}
+
+.settings  > form > ul > li
+{
+    display: inline-block;
+    width: 100%;
+    list-style-type: none;
+    background: rgb(235, 235, 235);
+    padding: 10px 0 10px 0;
+    margin: 2px 0 7px 0;
+    font-size: 12px;
+}
+
+.settings  > form > ul > li > label
+{
+    box-sizing: border-box;
+    width: 20%;
+    margin: 0 7% 0 2%;
+}
+
+.settings  form ul div
+{
+    box-sizing: border-box;
+    width: 40%;
+    display: inline-block;
+}
+
+.settings  > form > ul input 
+{
+    border: none;
+    width: 80%;
+    height: 1.5em;
+    vertical-align: middle;
+    font-size: 12px;
+}
+
+.save
+{
+    position: relative;
+    float: left;
+    border: none;
+    padding: 5px;
+    font-size: 12px;
+    width: 6em;
+    margin-left: 1em;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    background: black;
+}
+
+.form-buttons 
+{
+    float: right;
+}
+
+.cancel
+{
+    position: relative;
+    float: left;
+    cursor: pointer;
+    outline: none;
+    color: black;
+    background: white;
+    border: none;
+    padding: 7px;
+    font-size: 13px;
+    width: 6.5em;
+    margin-left: 1.2em;
+}
+
+#my-team-folders, #qr
+{
+    width: 100%;
+    height: 600px;
+    background: rgb(235, 235, 235);
+    display: none;
+    position: relative;
+    padding: 1em;
+    box-sizing: border-box;
+}
+.tabs >ul >li 
+{
+    display: inline-block;
+    background: rgb(110,105,110);
+    text-align: center;
+    width: 23%;
+    margin: 0 1% 0 1%;
+    padding: 1em;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    vertical-align: bottom;
+}
 
 
-	.tab_turnOn {
-		display: block;
-	}
+.styled-select-list:hover  li
+{
+    display: block;
+}
 
-	.tab_turnOff {
-		display: none;
-	}
-
-	#quick-reports, #my-folders, #my-team-folders, #public-folders {
-		background-color: rgb(204,204,204);
-		height: 100%;
-		width: 100%;
-		overflow: auto;
-		position: relative;
-	}
-
-	.sites-div-turnoff {
-		background-color: white;
-		min-height: 200px;
-		overflow: hidden;
-		width: 95%;
-		position: absolute;
-		top: 48px;
-		visibility: hidden;
-		left:0;
-		right:0;
-		margin-left:auto;
-		margin-right:auto;
-	}
-
-	.sites-div-turnon {
-		background-color: white;
-		min-height: 200px;
-		overflow: hidden;
-		width: 95%;
-		position: absolute;
-		top: 48px;
-		visibility: visible;
-		box-shadow: 0px 5px 5px 1px #888888;
-		left:0;
-		right:0;
-		margin-left:auto;
-		margin-right:auto;
-	}
-
-	.toolbar-icons {
-		display: block;
-		height: 300px;
-		width: 95%;
-		margin: 0 auto;
-	}
-
-	select {
-		float: left;
-		display: block;
-		width: 20%;
-		height: 50%;
-		margin-top: 10px;
-		visibility: hidden; 
-	}
-
-	.iframe-div {
-		width: 95%;
-		display: block;
-		text-align: center;
-		margin: 0 auto;
-		display: block;
-	}
-
-	.toolbar-icons a {
-		float: right;
-	}
-
-	.toolbar-icons img {
-		padding: 10px;
-	}
-
-
-	.expand {
-		padding-top: 2px;
-		height: 20px;
-		width: 20px;
-	}
-
-	iframe {
-		width: 100%;
-		height: 600px;
-		display: block;
-		border: 0;
-	}
-	.form-ul {
-		margin: 0px;
-	}
-
-	.form-ul li{
-		background-color: rgb(204,204,204);
-		padding: 0 30px;
-		margin: 10px;
-	}
-
-	.form-ul li p{
-		width: 20%;
-		display: inline-block;
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
-
-	.form-ul li label{
-		margin-right: 10px;
-	}
-
-	.form-ul li input{
-		width: 30%;
-		margin-right: 30px;
-
-	}
-
-	.form-ul li:first-child input {
-
-	}
-
-	.form-ul li:nth-child(2) input {
-
-	}
-
-	.form-ul li:last-child input {
-
-	}
-
-
-
-
-	.save , .cancel{
-		background-color: black;
-		border: 0px;
-		width: 120px;
-		height: 30px;
-		float: right;
-		color: white;
-		margin: 10px;
-	}
-
-	.cancel {
-		background-color: transparent;
-		color: gray;
-		text-decoration: underline;
-	}
+#my-folders .frame-window, #public-folders .frame-window
+{
+    margin: 1em;
+}
+.tabs >ul , nav
+{
+    padding: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+    font-size: 0;
+}
