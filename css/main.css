@@ -1,3 +1,45 @@
+.menu-caption
+{
+    background: rgb(235, 235, 235);
+    font-size: 13px;
+    color: black;
+    text-align: left;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.settings  > form > ul > li
+{
+    display: inline-block;
+    width: 100%;
+    list-style-type: none;
+    background: rgb(230, 230, 240);
+    padding: 10px 0 10px 0;
+    margin: 2px 0 7px 0;
+    font-size: 12px;
+}
+.save
+{
+    position: relative;
+    float: left;
+    border: none;
+    padding: 5px;
+    font-size: 12px;
+    width: 6em;
+    margin-left: 1em;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    background: black;
+}
+.settings  > form > ul input 
+{
+    border: none;
+    width: 80%;
+    height: 1.5em;
+    vertical-align: middle;
+    font-size: 12px;
+}
 .nav-section:first-child
 {
     margin-left: 0;
@@ -14,8 +56,8 @@
 }
 header
 {
-    height: 72px;
-    width: 100%;
+    height: 70px;
+    width: 95%;
     background-color: black;
 }
 .form-buttons 
@@ -23,6 +65,10 @@ header
     float: right;
 }
 
+.tabs li:first-child
+{
+    margin-left: 0;
+}
 .styled-select-list li:first-child 
 {
  display: block;   
@@ -47,10 +93,6 @@ header
     display: block;
 }
 
-#my-folders .frame-window, #public-folders .frame-window
-{
-    margin: 1em;
-}
 #my-team-folders
 {
     width: 100%;
@@ -108,7 +150,7 @@ header
 
 .heading
 {
-    width: 80%;
+    width: 82%;
     display: inline-block;
     position: relative;
     left: 120px;
@@ -246,12 +288,10 @@ body
     float: right;
     margin: 1em;
 }
-
-
-
-
-
-
+.tabs li:last-child
+{
+    margin-right: 0;
+}
 
 .tabs >ul >li >a 
 {
@@ -261,20 +301,20 @@ body
 
 .tabs >ul >li:focus
 {
-    background: rgb(235, 235, 235);
     outline: none;
+    background: rgb(230, 235, 235);
 }
+
 .action-list
 {
-    width: 100%;
-    text-align: left;
-    position: absolute;
-    top: 160px;
-    z-index: 1;
+    top: 155px;
+    z-index: 3;
     list-style-type: none;
     display: none;
     padding: 0;
-
+    width: 100%;
+    text-align: left;
+    position: absolute;
 }
 
 .action-list >li
@@ -312,21 +352,12 @@ body
     color: black !important;
 }
 
-.tabs li:first-child
+#my-folders
 {
-    margin-left: 0;
-}
-
-.tabs li:last-child
-{
-    margin-right: 0;
-}
-
-#my-folders,#public-folders
-{
+    margin: 1.1em;
     width: 100%;
-    height: 600px;
-    background: rgb(235, 235, 235);
+    height: 650px;
+    background: rgb(230, 230, 240);
     display: none;
     position: relative;
 }
@@ -351,19 +382,7 @@ body
     font-size: 1.3em;
     margin-top: 0.5em;
 }
-.frame-window 
-{
-    width: 100%;
-    height: 84%;
-    border: medium none;
-    position: absolute;
-    margin: 0em;
-    box-sizing: border-box;
-    display: block;
-    padding-right: 2em;
-    top: 68px;
-    z-index: 0;
-}
+
 
 .expand-icon ,.settings-icon
 {
@@ -401,16 +420,7 @@ body
     background-size: cover;
 }
 
-.menu-caption
-{
-    background: rgb(235, 235, 235);
-    font-size: 13px;
-    color: black;
-    text-align: left;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
+
 
 .menu-caption > p ,.dynamic-drop-down>ul
 {
@@ -434,10 +444,108 @@ body
 
 .notifications  p 
 {
-    background: rgb(235, 235, 235);
+    background: rgb(230, 230, 240);
     padding: 0.6em 1.8em 0.6em 1.8em;
     font-size: 14px;
     margin: 1em;
+}
+
+
+.settings
+{
+    background: white;
+    padding: 1em;
+    box-shadow: 1px 1px 6px 2px gray;
+    height: 36%;
+    position: relative;
+    z-index: 2;
+}
+.frame-window 
+{
+    border: medium none;
+    position: absolute;
+    margin: 1.1em;
+    box-sizing: border-box;
+    display: block;
+    padding-right: 2em;
+    top: 72px;
+    z-index: 10;
+    width: 95%;
+    height: 100%;
+}
+.settings  > form > ul
+{
+    padding-left: 0;
+}
+
+
+.settings  > form > ul > li > label
+{
+    box-sizing: border-box;
+    width: 20%;
+    margin: 0 7% 0 2%;
+}
+
+.settings  form ul div
+{
+    box-sizing: border-box;
+    width: 40%;
+    display: inline-block;
+}
+
+
+
+
+
+.form-buttons 
+{
+    float: right;
+}
+
+
+#my-team-folders, #qr
+{
+    width: 100%;
+    height: 600px;
+    background: rgb(235, 235, 235);
+    display: none;
+    position: relative;
+    padding: 1em;
+    box-sizing: border-box;
+}
+.tabs >ul >li 
+{
+    display: inline-block;
+    background: rgb(110,105,110);
+    text-align: center;
+    width: 23%;
+    margin: 0 0.5% 0 0.8%;
+    padding: 0.8em;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    vertical-align: bottom;
+}
+
+
+.styled-select-list:hover  li
+{
+    display: block;
+}
+.tabs >ul , nav
+{
+    padding: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+    font-size: 0;
+}
+#public-folders
+{
+    width: 100%;
+    height: 600px;
+    background: rgb(230, 230, 240);
+    display: none;
+    position: relative;
+    margin: 1.1em;
 }
 
 .nav-section:first-child
@@ -464,76 +572,6 @@ body
 {
     display: block;
 }
-
-.settings
-{
-    background: white;
-    padding: 1em;
-    box-shadow: 1px 1px 6px 2px gray;
-    height: 36%;
-    position: relative;
-    z-index: 2;
-}
-
-.settings  > form > ul
-{
-    padding-left: 0;
-}
-
-.settings  > form > ul > li
-{
-    display: inline-block;
-    width: 100%;
-    list-style-type: none;
-    background: rgb(235, 235, 235);
-    padding: 10px 0 10px 0;
-    margin: 2px 0 7px 0;
-    font-size: 12px;
-}
-
-.settings  > form > ul > li > label
-{
-    box-sizing: border-box;
-    width: 20%;
-    margin: 0 7% 0 2%;
-}
-
-.settings  form ul div
-{
-    box-sizing: border-box;
-    width: 40%;
-    display: inline-block;
-}
-
-.settings  > form > ul input 
-{
-    border: none;
-    width: 80%;
-    height: 1.5em;
-    vertical-align: middle;
-    font-size: 12px;
-}
-
-.save
-{
-    position: relative;
-    float: left;
-    border: none;
-    padding: 5px;
-    font-size: 12px;
-    width: 6em;
-    margin-left: 1em;
-    cursor: pointer;
-    outline: none;
-    color: white;
-    background: black;
-}
-
-.form-buttons 
-{
-    float: right;
-}
-
 .cancel
 {
     position: relative;
@@ -547,45 +585,4 @@ body
     font-size: 13px;
     width: 6.5em;
     margin-left: 1.2em;
-}
-
-#my-team-folders, #qr
-{
-    width: 100%;
-    height: 600px;
-    background: rgb(235, 235, 235);
-    display: none;
-    position: relative;
-    padding: 1em;
-    box-sizing: border-box;
-}
-.tabs >ul >li 
-{
-    display: inline-block;
-    background: rgb(110,105,110);
-    text-align: center;
-    width: 23%;
-    margin: 0 1% 0 1%;
-    padding: 1em;
-    box-sizing: border-box;
-    font-size: 1.2rem;
-    vertical-align: bottom;
-}
-
-
-.styled-select-list:hover  li
-{
-    display: block;
-}
-
-#my-folders .frame-window, #public-folders .frame-window
-{
-    margin: 1em;
-}
-.tabs >ul , nav
-{
-    padding: 0;
-    margin-bottom: 0;
-    list-style-type: none;
-    font-size: 0;
 }
