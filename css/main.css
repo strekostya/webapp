@@ -264,18 +264,10 @@ body
 
 }
 
-.nav-section:hover .menu-caption:after,.nav-section:focus .menu-caption:after
-{
-    transform: rotate(180deg);
-}
-
 .nav-section:hover .action-list,.nav-section:focus .action-list
 {
     display: block;
 }
-
-
-
 
 .notifications  p 
 {
@@ -575,11 +567,6 @@ body
     background-color: #444444;
 }
 
-.nav-section:hover .menu-caption:after,.nav-section:focus .menu-caption:after
-{
-    transform: rotate(180deg);
-}
-
 .nav-section:hover .action-list,.nav-section:focus .action-list
 {
     display: block;
@@ -590,11 +577,11 @@ body
     float: left;
     cursor: pointer;
     outline: none;
+    font-size: 13px;
+    width: 6.5em;
+    margin-left: 1.2em;
     color: black;
     background: white;
     border: none;
     padding: 7px;
-    font-size: 13px;
-    width: 6.5em;
-    margin-left: 1.2em;
 }
