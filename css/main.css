@@ -354,7 +354,6 @@ body
 
 #my-folders
 {
-    margin: 1.1em;
     width: 100%;
     height: 650px;
     background: rgb(230, 230, 240);
@@ -450,6 +449,47 @@ body
     margin: 1em;
 }
 
+.frame-window 
+{
+    border: medium none;
+    position: absolute;
+    margin: 1.1em;
+    display: block;
+    padding-right: 2em;
+    top: 72px;
+    width: 95%;
+    height: 85%;
+    box-sizing: border-box;
+}
+
+.form-buttons 
+{
+    float: right;
+}
+
+#my-team-folders, #qr
+{
+    width: 100%;
+    height: 600px;
+    background: rgb(235, 235, 235);
+    display: none;
+    position: relative;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.tabs >ul >li 
+{
+    display: inline-block;
+    background: rgb(110,105,110);
+    text-align: center;
+    width: 23%;
+    margin: 0 0.5% 0 0.8%;
+    padding: 0.8em;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    vertical-align: bottom;
+}
 
 .settings
 {
@@ -460,24 +500,22 @@ body
     position: relative;
     z-index: 2;
 }
-.frame-window 
-{
-    border: medium none;
-    position: absolute;
-    margin: 1.1em;
-    box-sizing: border-box;
-    display: block;
-    padding-right: 2em;
-    top: 72px;
-    z-index: 10;
-    width: 95%;
-    height: 100%;
-}
+
 .settings  > form > ul
 {
     padding-left: 0;
 }
 
+.settings  > form > ul > li
+{
+    display: inline-block;
+    width: 100%;
+    list-style-type: none;
+    background: rgb(235, 235, 235);
+    padding: 10px 0 10px 0;
+    margin: 2px 0 7px 0;
+    font-size: 12px;
+}
 
 .settings  > form > ul > li > label
 {
@@ -493,44 +531,19 @@ body
     display: inline-block;
 }
 
-
-
-
-
-.form-buttons 
+.settings  > form > ul input 
 {
-    float: right;
+    border: none;
+    width: 80%;
+    height: 1.5em;
+    vertical-align: middle;
+    font-size: 12px;
 }
-
-
-#my-team-folders, #qr
-{
-    width: 100%;
-    height: 600px;
-    background: rgb(235, 235, 235);
-    display: none;
-    position: relative;
-    padding: 1em;
-    box-sizing: border-box;
-}
-.tabs >ul >li 
-{
-    display: inline-block;
-    background: rgb(110,105,110);
-    text-align: center;
-    width: 23%;
-    margin: 0 0.5% 0 0.8%;
-    padding: 0.8em;
-    box-sizing: border-box;
-    font-size: 1.2rem;
-    vertical-align: bottom;
-}
-
-
 .styled-select-list:hover  li
 {
     display: block;
 }
+
 .tabs >ul , nav
 {
     padding: 0;
@@ -538,6 +551,7 @@ body
     list-style-type: none;
     font-size: 0;
 }
+
 #public-folders
 {
     width: 100%;
@@ -545,7 +559,6 @@ body
     background: rgb(230, 230, 240);
     display: none;
     position: relative;
-    margin: 1.1em;
 }
 
 .nav-section:first-child
@@ -560,7 +573,7 @@ body
 
 .nav-section:hover,.nav-section:focus
 {
-    background-color: #333333;
+    background-color: #444444;
 }
 
 .nav-section:hover .menu-caption:after,.nav-section:focus .menu-caption:after
