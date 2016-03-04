@@ -128,19 +128,7 @@ header
     color: #6E6E6E;
 }
 
-.styled-select-list 
-{
-    margin-left: 0;
-    margin-top: 0;
-    padding: 5px 0 5px 9px;
-    list-style-type: none;
-    text-align: left;
-    position: absolute;
-    width: 300px;
-    background: white none repeat scroll 0 0;
-    display: none;
-    cursor: default;
-}
+
 
 .styled-select-list li:first-child 
 {
@@ -158,7 +146,19 @@ header
     padding-left: 20px;
     padding-top: 20px;
 }
-
+.styled-select-list 
+{
+    margin-left: 0;
+    margin-top: 0;
+    padding: 5px 0 5px 9px;
+    list-style-type: none;
+    text-align: left;
+    position: absolute;
+    width: 300px;
+    background: white none repeat scroll 0 0;
+    display: none;
+    cursor: default;
+}
 .find
 {
     float: right;
@@ -208,13 +208,14 @@ header
 {
     content: "";
     width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
     border-top: 10px solid black;
     float: right;
     margin-top: 5px;
     margin-right: 10px;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+
 }
 .body-heading
 {
@@ -229,7 +230,21 @@ header
     padding: 1em;
 }
 
-
+.nav-section
+{
+    background: black;
+    height: 12em;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    font-size: 1rem;
+    vertical-align: bottom;
+    width: 32%;
+    margin: 1%;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+}
 
 body
 {
@@ -360,21 +375,7 @@ body
     display: none;
     position: relative;
 }
-.nav-section
-{
-    background: black;
-    height: 11em;
-    width: 32%;
-    margin: 1%;
-    color: white;
-    text-align: center;
-    box-sizing: border-box;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    font-size: 1rem;
-    vertical-align: bottom;
-}
+
 
 .nav-section > p
 {
@@ -385,10 +386,11 @@ body
 
 .expand-icon ,.settings-icon
 {
+    display: block;
     float: right;
     text-align: center;
     margin: 1em 1em 0 1em;
-    display: block;
+
     width: 20px;
     height: 20px;
 }
@@ -431,14 +433,13 @@ body
 {
     content: "";
     width: 0;
+    margin: 1em;
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid black;
     float: right;
-    margin: 1em;
-    -moz-transition: 0.5s all;
-    -webkit-transition: 0.5s all;
+
 }
 
 .notifications  p 
@@ -491,16 +492,6 @@ body
     vertical-align: bottom;
 }
 
-.settings
-{
-    background: white;
-    padding: 1em;
-    box-shadow: 1px 1px 6px 2px gray;
-    height: 36%;
-    position: relative;
-    z-index: 2;
-}
-
 .settings  > form > ul
 {
     padding-left: 0;
@@ -534,10 +525,18 @@ body
 .settings  > form > ul input 
 {
     border: none;
-    width: 80%;
-    height: 1.5em;
-    vertical-align: middle;
+    width: 90%;
+    height: 1.8em;
     font-size: 12px;
+}
+.settings
+{
+    background: white;
+    z-index: 1;
+    padding: 1em;
+    box-shadow: 1.2px 1.2px 6.5px 2px gray;
+    height: 36%;
+    position: relative;
 }
 .styled-select-list:hover  li
 {
