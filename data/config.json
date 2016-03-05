@@ -1,5 +1,5 @@
 {
-	"notification": "The data of UTF BI would be updated at 16:00pm.",
+	"notification": "The data of UTF BI would be updated at 16:00 pm.",
 	"quickActions": [
 		{
 			"label": "Select<br>Reporting Platform",
@@ -56,40 +56,21 @@
 	],
 	"tabsList": [
 		{
-			"id"
-			"options":
-			[
-
-			 	{
-					"rowLabel": "ONE"
-					"url": "http://one.co.il"
-				},
-				{
-					"rowLabel": "SPORTS"
-					"url": "http://sports.ru"
-				}
-			]
+			"options": {
+				"rowLabel": "Report"
+			}
 		}, {
-			"options": 
-			[
-				{
-					"url": "http://www.paulirish.com/"
-				}
-			]
+			"options": {
+				"url": "http://www.paulirish.com/"
+			}
 		}, {
-			"options":
-			[
-				{
-					"rowLabel": "Folder"
-				}
-			]
+			"options": {
+				"rowLabel": "Folder"
+			}
 		}, {
-			"options": 
-			[
-				{
-					"url": "http://addyosmani.com/"
-				}
-			]
+			"options": {
+				"url": "http://addyosmani.com/"
+			}
 		}
 	]
 }
