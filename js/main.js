@@ -8,24 +8,30 @@ StatusNumbers =
     StatusCodeNotModified: 304
 }
 
+TagNames = 
+{
+    qr: "qr",
+    mtf: "my-team-folders",
+}
+
 var getQA = function (qA) {
-	var k = 4;
+    var k = 4;
     var l = 0;
     if (qA !== undefined) 
     {
         for (var i = 0; i < qA.length; i++) {
-        	document.querySelectorAll(".nav-section")[i].innerHTML = "<p>" + qA[i].label + "</p>" + document.querySelectorAll(".nav-section")[i].innerHTML;
-        	document.querySelectorAll(".nav-section")[i].style.background = "black url(./img/icons/" + qA[i].icon + ".png)  left 50% top 77px no-repeat";
-        	document.querySelectorAll(".nav-section")[i].addEventListener("focus", function (e) { this.querySelector(".action-list").style.display = "block";}, false);
-        	document.querySelectorAll(".nav-section")[i].addEventListener("mouseleave", function (e) {
-        	    if (document.activeElement === this) {
-        	        this.blur();
-        	        this.querySelector(".action-list").style.display = "none";
-        	    }
-        	}, false);
+            document.querySelectorAll(".nav-section")[i].innerHTML = "<p>" + qA[i].label + "</p>" + document.querySelectorAll(".nav-section")[i].innerHTML;
+            document.querySelectorAll(".nav-section")[i].style.background = "black url(./img/icons/" + qA[i].icon + ".png)  left 50% top 77px no-repeat";
+            document.querySelectorAll(".nav-section")[i].addEventListener("focus", function (e) { this.querySelector(".action-list").style.display = "block";}, false);
+            document.querySelectorAll(".nav-section")[i].addEventListener("mouseleave", function (e) {
+                if (document.activeElement === this) {
+                    this.blur();
+                    this.querySelector(".action-list").style.display = "none";
+                }
+            }, false);
         }
         for (i = 0; i < qA.length; i++) {
-        	document.querySelectorAll(".menu-caption")[i].innerHTML = "<p>" + qA[i].actionsLabel + "</p>";
+            document.querySelectorAll(".menu-caption")[i].innerHTML = "<p>" + qA[i].actionsLabel + "</p>";
         }
       
         var start = "<li><a href=\"";
@@ -35,7 +41,7 @@ var getQA = function (qA) {
         {
             for (var j = 0; j < qA[i].actions.length; j++) 
             {
-            	document.querySelectorAll(".action-list")[i].innerHTML += start + qA[i].actions[j].url + tabIndex + k + end;
+                document.querySelectorAll(".action-list")[i].innerHTML += start + qA[i].actions[j].url + tabIndex + k + end;
                 document.querySelectorAll(".action-list li >a")[l].innerHTML =  qA[i].actions[j].label;
                 ++l; ++k;
             }
@@ -45,8 +51,8 @@ var getQA = function (qA) {
 };
 var helpF = function(info)
 {
-	for (var i = 0; i < info.length; i += 2) 
-	{
+    for (var i = 0; i < info.length; i += 2) 
+    {
         if (( info[i + 1].value != null && info[i + 1].value != "") || 
             ( info[i].value != null && info[i].value != "")) {
             info[i].required = true;
@@ -64,7 +70,7 @@ var helpF = function(info)
             ok = true;
         }
     }
-	return ok;
+    return ok;
 }
 
 var getCon = function (url, options) 
@@ -124,7 +130,7 @@ var getCon = function (url, options)
 var refresh = function (tabName) 
 {
     var info = document.querySelectorAll("." + tabName + " .name" + ", ." + tabName + " .url");
-    fill(info);
+    fill(info,tabName);
     var enc = "." + tabName + " .styled-select-list";
     var indicator = true;
     document.querySelector(enc).innerHTML = "";
@@ -148,14 +154,16 @@ var refresh = function (tabName)
     if (indicator == true) 
     {
         document.querySelector(enc).style.display = "none";
-
         document.querySelector("." + document.querySelector(enc).parentNode.parentNode.className + " .frame-window").src = "";
         document.querySelector("." + document.querySelector(enc).parentNode.parentNode.className + " .expand-icon").href = "";
-    } else {
+    }
+    else 
+    {
         document.querySelector(enc).style.display = "block";
         var listItems = document.querySelectorAll(enc + " li");
-        for (i = 0; i < listItems.length; i++) {
-            listItems[i].addEventListener("click", openIframe);
+        for (i = 0; i < listItems.length; i++) 
+        {
+            listItems[i].addEventListener("click", function() {openIframe(this,tabName);});
         }
         var settingsDiv = document.querySelector("." + document.querySelector(enc).parentNode.parentNode.className + " .settings");
         settingsDiv.style.display = "none";
@@ -172,7 +180,7 @@ var pushSave = function (parentClass)
     ok = helpF(info);
     if (ok == true) 
     {
-    	var indicator = true;
+        var indicator = true;
         var enc = parentClass + ":.+?;";
         localStorage.webApp = localStorage.webApp.replace(new RegExp(enc, "g"), "");
         for (var i = 0; i < info.length; i++) {
@@ -198,10 +206,13 @@ var pushSave = function (parentClass)
             document.querySelector(enc).style.display = "none";
             document.querySelector("." + parentClass + " .frame-window").src = "";
             document.querySelector("." + parentClass + " .expand-icon").href = "";
-        } else {
+        }
+        else 
+        {
             document.querySelector(enc).style.display = "block";
-            for (i = 0; i < document.querySelectorAll(enc + " li").length; i++) {
-            	document.querySelectorAll(enc + " li")[i].addEventListener("click", openIframe);
+            for (i = 0; i < document.querySelectorAll(enc + " li").length; i++) 
+            {
+                document.querySelectorAll(enc + " li")[i].addEventListener("click", function() {openIframe(this,parentClass);});
             }
         }
         document.querySelector("." + parentClass + " .settings-icon").click();
@@ -210,7 +221,7 @@ var pushSave = function (parentClass)
 };
 var tabUp = function (pics) {
     for (var i = 0; i < document.querySelectorAll(".tabs >ul li a").length; i++) {
-    	document.querySelectorAll(".tabs >ul li a")[i].innerHTML = "<i class=\"" + pics.preferences.fontPref.prefix + pics.icons[i].icon.tags[0] + "\"></i>" + document.querySelectorAll(".tabs >ul li a")[i].innerHTML;
+        document.querySelectorAll(".tabs >ul li a")[i].innerHTML = "<i class=\"" + pics.preferences.fontPref.prefix + pics.icons[i].icon.tags[0] + "\"></i>" + document.querySelectorAll(".tabs >ul li a")[i].innerHTML;
     }
     if (window.location.href.indexOf("#") == -1) {
         document.querySelector(".tabs>ul>li").className += "active-tab";
@@ -222,7 +233,7 @@ var tabUp = function (pics) {
     }
     window.addEventListener("hashchange", function (e) {
         for (var i = 0; i < document.querySelectorAll(".tabs > div").length; i++) {
-        	document.querySelectorAll(".tabs > div")[i].style.display = "none";
+            document.querySelectorAll(".tabs > div")[i].style.display = "none";
         }
         document.querySelector(e.newURL.substring(e.newURL.indexOf("#"))).style.display = "block";
         document.querySelector(".active-tab").className = "";
@@ -230,17 +241,48 @@ var tabUp = function (pics) {
     }, false);
 
 };
-var fill = function(info){
-	 for (i = 0; i < info.length; i++) {
-	        var str = tabName + ":" + info[i].id + "=";
-	        if (localStorage.webApp.indexOf(str) != -1) 
-	        {
-	            var i = localStorage.webApp.indexOf(str) + str.length;
-	            var j = localStorage.webApp.indexOf(";", i);
-	            info[i].value = localStorage.webApp.substring(i, j);
-	        }
-	    }
+var fill = function(info, tabName)
+{
+     for (i = 0; i < info.length; i++) 
+     {
+            var str = tabName + ":" + info[i].id + "=";
+            if (localStorage.webApp.indexOf(str) != -1) 
+            {
+                var i = localStorage.webApp.indexOf(str) + str.length;
+                var j = localStorage.webApp.indexOf(";", i);
+                info[i].value = localStorage.webApp.substring(i, j);
+            }
+     }
 }
+
+var setSettings = function(currentTag, parentClass) 
+{
+        var settingsDiv = document.querySelector("." + parentClass + "> .settings");
+        if (settingsDiv.style.display == "none") {
+            settingsDiv.style.display = "block";
+            settingsDiv.style.height = "36%";
+            currentTag.parentNode.style.backgroundColor = "white";
+            document.querySelector("." + parentClass + " .name").focus();
+        }
+        else
+        {
+            settingsDiv.style.display = "none";
+            settingsDiv.style.height = "0";
+            currentTag.parentNode.style.backgroundColor = "transparent";
+        }
+};
+var setCancel = function (currentTag, parentClass) 
+{
+    for (var i = 0; i < document.querySelectorAll("." + parentClass + " .url ," + "." + parentClass + " .name").length; ++i) 
+    {
+        document.querySelectorAll("." + parentClass + " .url ," + "." + parentClass + " .name")[i].value = "";
+    }
+    var settingsDiv = document.querySelector("." + parentClass + " .settings");
+    settingsDiv.style.display = "none";
+    settingsDiv.style.height = "0";
+    document.querySelector("." + parentClass + " .settings-icon-wrapper").style.backgroundColor = "transparent";
+    refresh(parentClass);
+};
 
 function start() 
 {
@@ -251,52 +293,28 @@ function start()
         }
         getQA(data.quickActions);
         if (localStorage.webApp != "" && localStorage.webApp != null) {
-            refresh("qr");
-            refresh("my-team-folders");
+            refresh(TagNames.qr);
+            refresh(TagNames.mtf);
         } else {
             localStorage.webApp = "";
         }
     }});
     getCon("fonts/selection.json", {done: tabUp});
+
     var sButtons = document.querySelectorAll(".settings-icon");
-    for (var i = 0; i < sButtons.length; ++i) {
-        sButtons[i].addEventListener("click", function () 
-        {
-            var parentClass = this.parentNode.parentNode.parentNode.className;
-            var settingsDiv = document.querySelector("." + parentClass + "> .settings");
-            if (settingsDiv.style.display == "none") {
-                settingsDiv.style.display = "block";
-                settingsDiv.style.height = "36%";
-                this.parentNode.style.backgroundColor = "white";
-                document.querySelector("." + parentClass + " .name").focus();
-            }
-            else {
-                settingsDiv.style.display = "none";
-                settingsDiv.style.height = "0";
-                this.parentNode.style.backgroundColor = "transparent";
-            }
-        });
-    }
+    sButtons[0].addEventListener("click", function(){setSettings(this,TagNames.qr);});
+    sButtons[1].addEventListener("click", function(){setSettings(this,TagNames.mtf);});
+
     sButtons = document.querySelectorAll(".cancel");
-    for (i = 0; i < sButtons.length; ++i) {
-        sButtons[i].addEventListener("click", function () 
-        {
-            var parentClass = this.parentNode.parentNode.parentNode.parentNode.className;
-            for (var i = 0; i < document.querySelectorAll("." + parentClass + " .url ," + "." + parentClass + " .name").length; ++i) {
-            	document.querySelectorAll("." + parentClass + " .url ," + "." + parentClass + " .name")[i].value = "";
-            }
-            var settingsDiv = document.querySelector("." + parentClass + " .settings");
-            settingsDiv.style.display = "none";
-            settingsDiv.style.height = "0";
-            document.querySelector("." + parentClass + " .settings-icon-wrapper").style.backgroundColor = "transparent";
-            refresh(parentClass);
-        });
-    }
+    sButtons[0].addEventListener("click", function(){setCancel(this,TagNames.qr);});
+    sButtons[1].addEventListener("click", function(){setCancel(this,TagNames.mtf);});
+
     sButtons = document.querySelectorAll(".save");
-    sButtons[0].addEventListener("click", function(){pushSave("qr");});
-    sButtons[1].addEventListener("click", function(){pushSave("my-team-folders");});
+    sButtons[0].addEventListener("click", function(){pushSave(TagNames.qr);});
+    sButtons[1].addEventListener("click", function(){pushSave(TagNames.mtf);});
     var info = document.querySelectorAll(".name , .url");
-    for (i = 0; i < info.length; ++i) {
+    for (i = 0; i < info.length; ++i) 
+    {
         info[i].addEventListener("keypress", function (myEvent) 
         {
             var keynum = myEvent.which;
@@ -304,7 +322,9 @@ function start()
             {
                 var at = activeTab(this);
                 document.querySelector("." + className + " .cancel").click();
-            } else if (keynum == StatusNumbers.EnterButtonPushed) {
+            }
+            else if (keynum == StatusNumbers.EnterButtonPushed) 
+            {
                 document.querySelector("." + className + " .save").click();
             }
         });
@@ -318,9 +338,9 @@ function start()
             {
                 if (dd[i].innerHTML == this.value) 
                 {
-                    document.querySelector(".tabs ul li a[href=\"#" +dd[i].parentNode.parentNode.parentNode.className +"\"]" ).click();
+                    document.querySelector(".tabs ul li a[href=\"#" + dd[i].parentNode.parentNode.parentNode.className +"\"]" ).click();
                     dd[i].click();
-                    i = dd.length +1;
+                    i = dd.length + 1;
                 }
             }
             if (i == dd.length) 
@@ -331,13 +351,13 @@ function start()
     });
 }
 
-var openIframe = function () 
+var openIframe = function (thisTag,name) 
 {
-    document.querySelector("." + this.parentNode.parentNode.parentNode.className + " .frame-window").src = this.title;
-    document.querySelector("." + this.parentNode.parentNode.parentNode.className + " .expand-icon").href = this.title;
-    this.parentNode.parentNode.querySelector("li").title = this.title;
-    this.parentNode.parentNode.querySelector("li").innerHTML = this.innerHTML;
-    this.parentNode.parentNode.querySelector("li").addEventListener("click", openIframe);
+    document.querySelector("." + name + " .frame-window").src = thisTag.title;
+    document.querySelector("." + name + " .expand-icon").href = thisTag.title;
+    thisTag.title = thisTag.title;
+    thisTag.innerHTML = thisTag.innerHTML;
+    thisTag.addEventListener("click", function() {openIframe(thisTag,name);});
 };
 
 var activeTab = function(currentTag)
