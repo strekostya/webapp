@@ -371,7 +371,7 @@ function start()
             }
             if (i == dd.length) 
             {
-                document.querySelector(TagNames.notifs).innerHTML = "<p>" + "Report: " + this.value +" does not exist"+ "</p>";
+                document.querySelector(TagNames.notifs).innerHTML = "<p>" + "Your request: " + this.value +" does not exist"+ "</p>";
             }
         }
     });
@@ -407,11 +407,3 @@ var learnRegExp = function (currentTag)
 
 
 window.onLoad = start();
-
-
-
-
-
-
-
-
