@@ -19,7 +19,7 @@
     margin: 2px 0 7px 0;
     font-size: 12px;
 }
-.save
+.update-new-changes
 {
     position: relative;
     float: left;
@@ -70,26 +70,30 @@ header
 {
     margin-left: 0;
 }
-.styled-select-list li:first-child 
+.sel li:first-child 
 {
  display: block;   
 }
 
-.styled-select-list li 
+.sel li 
 {
  display: none;   
 }
 
-.styled-select-list li:first-child:after 
+.sel li:first-child:after 
 {
     content: "";
     width: 0;
+    border-top: 10px solid black;
+    float: right;
+    margin-top: 5px;
+    margin-right: 10px;
     height: 0;
     border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
 
 }
-
-.styled-select-list:hover  li
+.sel:hover  li
 {
     display: block;
 }
@@ -115,27 +119,16 @@ header
     box-sizing: border-box;
 }
 
-.settings-icon-wrapper
-{
-    float: right;
-    background: white;
-    height: 3em;
-    width: 3em;
-}
-
-.styled-select-list li a:link ,.styled-select-list li a:visited 
+.sel li a:link ,.sel li a:visited 
 {
     text-decoration: none;
     color: #6E6E6E;
 }
 
-
-
-.styled-select-list li:first-child 
+.sel li:first-child 
 {
  display: block;   
 }
-
 
 .heading
 {
@@ -147,7 +140,7 @@ header
     padding-left: 20px;
     padding-top: 20px;
 }
-.styled-select-list 
+.sel 
 {
     margin-left: 0;
     margin-top: 0;
@@ -160,6 +153,7 @@ header
     display: none;
     cursor: default;
 }
+
 .find
 {
     float: right;
@@ -167,7 +161,7 @@ header
     height: 1.8em;
 }
 
-.settings-icon-wrapper
+.set-box
 {
     background: white;
     height: 3em;
@@ -175,49 +169,6 @@ header
     float: right;
 }
 
-.styled-select-list li a:link ,.styled-select-list li a:visited 
-{
-    text-decoration: none;
-    color: #6E6E6E;
-}
-
-.styled-select-list 
-{
-    margin-left: 0;
-    margin-top: 0;
-    padding: 5px 0 5px 9px;
-    list-style-type: none;
-    text-align: left;
-    position: absolute;
-    width: 300px;
-    background: white none repeat scroll 0 0;
-    display: none;
-    cursor: default;
-}
-
-.styled-select-list li:first-child 
-{
- display: block;   
-}
-
-.styled-select-list li 
-{
- display: none;   
-}
-
-.styled-select-list li:first-child:after 
-{
-    content: "";
-    width: 0;
-    border-top: 10px solid black;
-    float: right;
-    margin-top: 5px;
-    margin-right: 10px;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-
-}
 .body-heading
 {
 
@@ -545,10 +496,6 @@ body
     height: 45%;
     position: relative;
 }
-.styled-select-list:hover  li
-{
-    display: block;
-}
 
 .tabs >ul , nav
 {
@@ -586,7 +533,7 @@ body
 {
     display: block;
 }
-.cancel
+.remove-all-links
 {
     position: relative;
     float: left;

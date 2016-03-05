@@ -12,32 +12,39 @@ TagNames =
 {
     qr: "qr",
     mtf: "my-team-folders",
+    windowLink: " .window-link",
+    updateChanges: ".update-new-changes",
+    removeAllLinks: ".remove-all-links",
+    sel: ".sel",
+    sett: ".set-box",
     notifs: ".notifications",
     navig: ".nav-section",
     act: ".action-list",
-    mnu: ".menu-caption",
-    sel: ".styled-select-list",
-    sett: ".settings-icon-wrapper",
-    windowLink: " .window-link"
+    mnu: ".menu-caption"
 }
 
-var getQA = function (qA) {
+var getQA = function (qA) 
+{
     var k = 4;
     var l = 0;
     if (qA !== undefined) 
     {
-        for (var i = 0; i < qA.length; i++) {
+        for (var i = 0; i < qA.length; i++) 
+        {
             document.querySelectorAll(TagNames.navig)[i].innerHTML = "<p>" + qA[i].label + "</p>" + document.querySelectorAll(TagNames.navig)[i].innerHTML;
             document.querySelectorAll(TagNames.navig)[i].style.background = "black url(./img/icons/" + qA[i].icon + ".png)  left 50% top 77px no-repeat";
             document.querySelectorAll(TagNames.navig)[i].addEventListener("focus", function (e) { this.querySelector(TagNames.act).style.display = "block";}, false);
-            document.querySelectorAll(TagNames.navig)[i].addEventListener("mouseleave", function (e) {
-                if (document.activeElement === this) {
+            document.querySelectorAll(TagNames.navig)[i].addEventListener("mouseleave", function (e) 
+            {
+                if (document.activeElement === this) 
+                {
                     this.blur();
                     this.querySelector(TagNames.act).style.display = "none";
                 }
             }, false);
         }
-        for (i = 0; i < qA.length; i++) {
+        for (i = 0; i < qA.length; i++) 
+        {
             document.querySelectorAll(TagNames.mnu)[i].innerHTML = "<p>" + qA[i].actionsLabel + "</p>";
         }
       
@@ -324,11 +331,11 @@ function start()
     sButtons[0].addEventListener("click", function(){setSettings(this,TagNames.qr);});
     sButtons[1].addEventListener("click", function(){setSettings(this,TagNames.mtf);});
 
-    sButtons = document.querySelectorAll(".cancel");
+    sButtons = document.querySelectorAll(TagNames.removeAllLinks);
     sButtons[0].addEventListener("click", function(){setCancel(this,TagNames.qr);});
     sButtons[1].addEventListener("click", function(){setCancel(this,TagNames.mtf);});
 
-    sButtons = document.querySelectorAll(".save");
+    sButtons = document.querySelectorAll(TagNames.updateChanges);
     sButtons[0].addEventListener("click", function(){pushSave(this,TagNames.qr);});
     sButtons[1].addEventListener("click", function(){pushSave(this,TagNames.mtf);});
     var info = document.querySelectorAll(".name , .url");
@@ -340,11 +347,11 @@ function start()
             if (keynum == StatusNumbers.ESCIsPressed) 
             {
                 var at = activeTab(this);
-                document.querySelector("." + className + " .cancel").click();
+                document.querySelector("." + className + " " + TagNames.removeAllLinks).click();
             }
             else if (keynum == StatusNumbers.EnterButtonPushed) 
             {
-                document.querySelector("." + className + " .save").click();
+                document.querySelector("." + className + " " + TagNames.updateChanges).click();
             }
         });
     }
