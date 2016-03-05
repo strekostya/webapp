@@ -330,6 +330,7 @@ function start()
         }
     });
 }
+
 var openIframe = function () 
 {
     document.querySelector("." + this.parentNode.parentNode.parentNode.className + " .frame-window").src = this.title;
