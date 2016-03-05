@@ -8,6 +8,7 @@
     bottom: 0;
     width: 100%;
 }
+
 .settings  > form > ul > li
 {
     display: inline-block;
@@ -60,7 +61,7 @@ header
     width: 95%;
     background-color: black;
 }
-.form-buttons 
+.reportsAndFolder
 {
     float: right;
 }
@@ -283,6 +284,10 @@ body
     padding-left: 1em;
     float: left;
 }
+.name
+{
+    display: inline-block;
+}
 
 .menu-caption:after
 {
@@ -441,7 +446,7 @@ body
     margin: 1em;
 }
 
-.frame-window 
+.window-link
 {
     display: block;
     padding-right: 2em;
@@ -452,11 +457,6 @@ body
     width: 95%;
     height: 85%;
     box-sizing: border-box;
-}
-
-.form-buttons 
-{
-    float: right;
 }
 
 #my-team-folders, #qr
@@ -499,17 +499,33 @@ body
     font-size: 12px;
 }
 
-.settings  > form > ul > li > label
+.moveLeft
 {
+    position: relative;
+    left: 50px;
+}
+.moveFolderLeft
+{
+    position: relative;
+    left: 30px;   
+}
+
+
+.settings  form ul div input
+{
+    margin-left: 30px;
     box-sizing: border-box;
-    width: 20%;
-    margin: 0 7% 0 2%;
+    width: 30%;
+    position: relative;
+    left: 100px;
+    bottom: 15px;
+    display: inline-block;
 }
 
 .settings  form ul div
 {
     box-sizing: border-box;
-    width: 40%;
+    width: 100%;
     display: inline-block;
 }
 
@@ -526,7 +542,7 @@ body
     z-index: 1;
     padding: 1em;
     box-shadow: 1.2px 1.2px 6.5px 2px gray;
-    height: 36%;
+    height: 45%;
     position: relative;
 }
 .styled-select-list:hover  li
